@@ -14,14 +14,13 @@ namespace FunWithFunctions
             test = true;
 
             bool? test2 = default(bool?);
-            test2 = true;
-            test2 = false;
 
             BoolTest(test2);
-            test2 = true;
+            test2 = false;
             BoolTest(test2);
             test2 = false;
             BoolTest(test2);
+            test2 = null;
 
             var elapsedDays = ComputeDays(DateTime.Now, new DateTime(2015, 3, 23));
             Console.WriteLine("I've been writing software for {0} days", elapsedDays);
@@ -47,7 +46,7 @@ namespace FunWithFunctions
                 Console.WriteLine("Tru");
             else if (test2 == false)
                 Console.WriteLine("False");
-            else if (!test2.HasValue)
+            else if (test2 == null)
                 Console.WriteLine("has no value");
             else
                 Console.WriteLine("NOPE");
